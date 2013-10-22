@@ -72,7 +72,7 @@ namespace BillingForms
        
         public void ImportRun(ImportFiles form)
         {
-            barStatus.Caption = @"Загрузка...";
+            label1.Text = @"Загрузка...";
             // нужно пройти по каталогу и подкаталогам и загрузить документы
             var directory = new DirectoryInfo(form.GetFolderRoot());
             var filePathList = new List<string>();
@@ -98,7 +98,7 @@ namespace BillingForms
                 foreach (var set in _iniSets)
                 {
                     if (Path.GetExtension(filepath) != set.GetFileExt().Substring(1)) continue;
-                    barStatus.Caption = Path.GetFileName(filepath);
+                    label1.Text = Path.GetFileName(filepath);
                     
                     // нужно проверить колонки данной xls
                     // включаем работу с xls
@@ -400,7 +400,7 @@ namespace BillingForms
                     GSMform.Show();
                 }
             }
-            barStatus.Caption = string.Format("Загружен(о) {0} документ(а)", numdocumload);
+            label1.Text = string.Format("Загружен(о) {0} документ(а)", numdocumload);
             progressBarControl1.Reset();
             progressBarControl2.Reset();
             progressBarControl1.Visible = false;

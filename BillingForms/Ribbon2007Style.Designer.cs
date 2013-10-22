@@ -78,7 +78,8 @@ namespace BillingForms
             this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             this.progressBarControl2 = new DevExpress.XtraEditors.ProgressBarControl();
             this.NewDocumentsThread = new System.ComponentModel.BackgroundWorker();
-            this.barStatus = new DevExpress.XtraBars.BarStaticItem();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
@@ -122,8 +123,7 @@ namespace BillingForms
             this.barButtonItem4,
             this.barButtonItem5,
             this.UnionSetsButton,
-            this.IntersectButton,
-            this.barStatus});
+            this.IntersectButton});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.MaxItemId = 70;
@@ -478,8 +478,7 @@ namespace BillingForms
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.ItemLinks.Add(this.barStatus);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 669);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 635);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1100, 31);
@@ -494,7 +493,8 @@ namespace BillingForms
             // 
             // progressBarControl1
             // 
-            this.progressBarControl1.Location = new System.Drawing.Point(101, 676);
+            this.progressBarControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.progressBarControl1.Location = new System.Drawing.Point(12, 642);
             this.progressBarControl1.MenuManager = this.ribbonControl;
             this.progressBarControl1.Name = "progressBarControl1";
             this.progressBarControl1.Size = new System.Drawing.Size(119, 12);
@@ -503,9 +503,8 @@ namespace BillingForms
             // 
             // progressBarControl2
             // 
-            this.progressBarControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBarControl2.Location = new System.Drawing.Point(226, 676);
+            this.progressBarControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.progressBarControl2.Location = new System.Drawing.Point(137, 642);
             this.progressBarControl2.MenuManager = this.ribbonControl;
             this.progressBarControl2.Name = "progressBarControl2";
             this.progressBarControl2.Size = new System.Drawing.Size(119, 12);
@@ -516,19 +515,34 @@ namespace BillingForms
             // 
             this.NewDocumentsThread.DoWork += new System.ComponentModel.DoWorkEventHandler(this.NewDocumentsThread_DoWork);
             // 
-            // barStatus
+            // labelControl1
             // 
-            this.barStatus.Caption = "...";
-            this.barStatus.Id = 69;
-            this.barStatus.Name = "barStatus";
-            this.barStatus.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.labelControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl1.Location = new System.Drawing.Point(263, 676);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(63, 13);
+            this.labelControl1.TabIndex = 7;
+            this.labelControl1.Text = "labelControl1";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightGray;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(262, 641);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 8;
             // 
             // Ribbon2007Style
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 700);
+            this.ClientSize = new System.Drawing.Size(1100, 666);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.progressBarControl2);
             this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.ribbonStatusBar);
@@ -548,6 +562,7 @@ namespace BillingForms
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl2.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -597,8 +612,9 @@ namespace BillingForms
         private DevExpress.XtraEditors.ProgressBarControl progressBarControl2;
         private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
         private System.ComponentModel.BackgroundWorker NewDocumentsThread;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.Label label1;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2;
-        private DevExpress.XtraBars.BarStaticItem barStatus;
 
     }
 }
